@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Redline Studio – Growth agency for the next web</title>
+<title>Redline Studio – Digital marketing agency</title>
 <meta name="theme-color" content="#05060a">
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,11 +30,9 @@ p{margin:0;color:var(--m);max-width:62ch}.mo{font-family:var(--mo)}.ac{color:var
 #bar{position:fixed;top:0;left:0;height:2px;width:0;background:var(--a);z-index:60;box-shadow:0 0 10px var(--a)}
 #glow{position:fixed;width:420px;height:420px;border-radius:50%;pointer-events:none;z-index:0;background:radial-gradient(circle,color-mix(in srgb,var(--a) 22%,transparent),transparent 65%);transform:translate(-50%,-50%);left:50%;top:30%}
 #bg{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.55}
-/* reveal */
 .js .rv{opacity:0;transform:translateY(34px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}
 .js .rv.in{opacity:1;transform:none}
 @keyframes fi{from{opacity:0;transform:translateY(18px)}}
-/* nav */
 header.n{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(5,6,10,.7);border-bottom:1px solid var(--l)}
 .n .w{display:flex;align-items:center;justify-content:space-between;height:60px}
 .logo{font-weight:700;font-size:19px;text-decoration:none;display:flex;gap:8px;align-items:center}.logo i{width:12px;height:12px;background:var(--a);transform:rotate(45deg);box-shadow:0 0 14px var(--a);animation:sp 6s linear infinite}
@@ -47,7 +45,6 @@ header.n{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;backdrop-fi
 #mp.o{display:block}#mp a{display:block;padding:14px 0;border-bottom:1px solid var(--l);text-decoration:none;font-size:20px}
 .btn.links{display:none}
 @media(min-width:860px){.links{display:flex}.btn.links{display:inline-block}#mb{display:none}}
-/* hero */
 .hero{position:relative;padding:48px 0 70px;overflow:hidden;min-height:88vh}
 #cv{position:absolute;right:-18%;top:2%;width:min(100vw,760px);height:min(100vw,760px);pointer-events:none}
 .hero .w{display:flex;flex-direction:column;gap:26px;padding-top:30vw}
@@ -59,18 +56,11 @@ header.n{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;backdrop-fi
 .rot{font:400 14px var(--mo);color:var(--m)}.rot b{color:var(--a2);font-weight:500}.rot i{display:inline-block;width:8px;height:15px;background:var(--a);vertical-align:-2px;margin-left:3px;animation:bk 1s steps(1) infinite}
 @keyframes bk{50%{opacity:0}}
 .hud{display:flex;gap:18px;flex-wrap:wrap;font:400 12px var(--mo);color:var(--m)}.hud b{color:var(--a2);font-weight:500}
-.live::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:#3dff8a;margin-right:6px;box-shadow:0 0 8px #3dff8a;animation:pu 1.4s infinite}
-/* marquee */
-.mq{border-block:1px solid var(--l);overflow:hidden;padding:18px 0;position:relative;z-index:1;background:var(--p)}
-.mq div{display:flex;gap:56px;width:max-content;animation:mq 30s linear infinite;font:700 22px var(--s);color:#4b5068;letter-spacing:-.02em}
-.mq div+div{margin-top:12px;animation-direction:reverse;color:#2e3246;animation-duration:38s}
-@keyframes mq{to{transform:translateX(-50%)}}
 section{padding:84px 0;position:relative;overflow:hidden}
 section::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;left:var(--ox,-12%);top:8%;background:radial-gradient(circle,color-mix(in srgb,var(--a) 15%,transparent),transparent 65%);animation:dr 14s ease-in-out infinite alternate;pointer-events:none}
 section:nth-of-type(even){--ox:62%}
 @keyframes dr{to{transform:translate(70px,140px) scale(1.25)}}
 .lead{margin-top:16px;font-size:18px}
-/* services */
 .tabs{display:flex;gap:8px;overflow-x:auto;margin-top:34px;padding-bottom:6px;scrollbar-width:none}
 .tabs button,.chip{flex:none;background:var(--p);color:var(--m);border:1px solid var(--l);padding:11px 16px;border-radius:99px;font:500 14px var(--s);cursor:pointer;transition:.2s}
 .tabs button[aria-selected=true],.chip.on{color:#05060a;background:var(--a);border-color:var(--a)}
@@ -82,47 +72,24 @@ section:nth-of-type(even){--ox:62%}
 @keyframes sn{to{top:100%}}
 .panel ul{margin:0;padding:0;list-style:none;display:grid;gap:10px;font:400 14px var(--mo);color:var(--t)}.panel li::before{content:"+ ";color:var(--a)}
 @media(min-width:760px){.panel{grid-template-columns:1.2fr 1fr;padding:36px}}
-/* work */
 .fl{display:flex;gap:8px;flex-wrap:wrap;margin-top:30px}
-.gr{display:grid;gap:14px;margin-top:22px}@media(min-width:760px){.gr{grid-template-columns:repeat(3,1fr)}}
-.cs{border:1px solid var(--l);background:var(--p);padding:0;overflow:hidden;transition:transform .25s,border-color .25s;animation:fi .6s backwards}
-.cs:nth-child(2){animation-delay:.08s}.cs:nth-child(3){animation-delay:.16s}.cs:nth-child(4){animation-delay:.24s}
-.cs:hover{transform:translateY(-4px);border-color:var(--a)}.cs.h{display:none}
-.cs .art{height:150px;background:radial-gradient(circle at var(--x,30%) 40%,color-mix(in srgb,var(--a) 55%,transparent),transparent 60%),linear-gradient(135deg,#12141f,#07080d);position:relative;overflow:hidden}
-.cs .art::before{content:"";position:absolute;left:var(--x,30%);top:50%;width:84px;height:84px;margin:-42px;border:1px solid var(--a);border-radius:50%;box-shadow:0 0 30px var(--a),inset 0 0 30px var(--a);animation:rp 3.2s ease-in-out infinite}
-@keyframes rp{50%{transform:scale(1.6);opacity:.2}}
-.cs .art i{position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 18px,rgba(255,255,255,.04) 18px 19px);animation:sl 6s linear infinite}
-@keyframes sl{to{background-position:38px 0}}
-.cs .art::after{content:attr(data-k);position:absolute;left:16px;bottom:12px;font:500 11px var(--mo);color:var(--a2)}
-.cs div.b{padding:18px}.cs h3{margin-bottom:6px}.cs .r{font:700 28px var(--s);color:var(--a);margin-top:12px;letter-spacing:-.03em}
-/* stats */
-.st{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:38px}@media(min-width:760px){.st{grid-template-columns:repeat(4,1fr)}}
-.st div{border-top:2px solid var(--a);padding-top:14px}.st b{display:block;font-size:clamp(38px,8vw,72px);letter-spacing:-.05em;line-height:1}.st span{font:400 12px var(--mo);color:var(--m)}
-/* process */
 .tl{position:relative;margin-top:40px;padding-left:34px}.tl::before{content:"";position:absolute;left:7px;top:0;bottom:0;width:2px;background:var(--l)}
 #fill{position:absolute;left:7px;top:0;width:2px;height:0;background:var(--a);box-shadow:0 0 12px var(--a)}
 .tl article{position:relative;padding:0 0 34px}.tl article::before{content:"";position:absolute;left:-34px;top:4px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:2px solid var(--l);transition:.3s}
 .tl article.on::before{border-color:var(--a);background:var(--a);box-shadow:0 0 14px var(--a)}
 .tl h3{margin-bottom:6px}.tl .k{font:500 12px var(--mo);color:var(--a2);margin-bottom:6px;display:block}
-/* roi */
 .roi{display:grid;gap:26px;margin-top:36px;border:1px solid var(--l);background:var(--p);padding:26px}@media(min-width:760px){.roi{grid-template-columns:1fr 1fr;padding:40px}}
 label{display:block;font:500 13px var(--mo);color:var(--m);margin-bottom:6px}label output{color:var(--t);float:right}
 input[type=range]{width:100%;accent-color:var(--a);margin:6px 0 20px}
 .out{display:grid;gap:14px;align-content:start}.out div{border-left:3px solid var(--a);padding-left:14px}.out b{font-size:clamp(30px,7vw,48px);letter-spacing:-.04em;display:block;line-height:1.05}.out span{font:400 12px var(--mo);color:var(--m)}
-/* pricing */
-.sw{display:inline-flex;border:1px solid var(--l);border-radius:99px;padding:4px;margin-top:28px}.sw button{background:none;border:0;color:var(--m);padding:9px 18px;border-radius:99px;font:500 14px var(--s);cursor:pointer}.sw button.on{background:var(--a);color:#05060a}
-.pr{display:grid;gap:14px;margin-top:22px}@media(min-width:860px){.pr{grid-template-columns:repeat(3,1fr)}}
+.sw{display:none;border:1px solid var(--l);border-radius:99px;padding:4px;margin-top:28px}.sw button{background:none;border:0;color:var(--m);padding:9px 18px;border-radius:99px;font:500 14px var(--s);cursor:pointer}.sw button.on{background:var(--a);color:#05060a}
+.pr{display:grid;gap:14px;margin-top:34px}@media(min-width:860px){.pr{grid-template-columns:repeat(3,1fr)}}
 .pl{border:1px solid var(--l);background:var(--p);padding:26px;display:flex;flex-direction:column;gap:14px;animation:fi .6s backwards;transition:transform .25s}.pl:nth-child(2){animation-delay:.1s}.pl:nth-child(3){animation-delay:.2s}
 .pl.f{border-color:var(--a);box-shadow:0 0 40px -12px var(--a);animation:fi .6s backwards,gl 3s ease-in-out infinite alternate}
 @keyframes gl{to{box-shadow:0 0 60px -6px var(--a)}}
-.pl .v{font-size:44px;font-weight:700;letter-spacing:-.04em}.pl .v small{font:400 13px var(--mo);color:var(--m);letter-spacing:0}
+.pl .v{font-size:34px;overflow-wrap:anywhere;font-weight:700;letter-spacing:-.04em}.pl .v small{font:400 13px var(--mo);color:var(--m);letter-spacing:0}
 .pl ul{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:15px;color:#c5c9d8;flex:1}.pl li::before{content:"✓ ";color:var(--a)}
-/* quotes + faq */
-.qt{margin-top:34px;border:1px solid var(--l);background:var(--p);padding:30px;min-height:230px}.qt q{display:block;font-size:clamp(21px,4.4vw,32px);font-weight:600;letter-spacing:-.025em;line-height:1.2;quotes:"“" "”"}
-.qt.sw2 q,.qt.sw2 span{animation:fi .6s backwards}
-.qt span{display:block;margin-top:18px;font:400 13px var(--mo);color:var(--m)}.dots{display:flex;gap:8px;margin-top:6px}.dots button{width:44px;height:24px;border:0;background:none;cursor:pointer;position:relative;padding:0}.dots button::after{content:"";position:absolute;left:0;right:0;top:10px;height:4px;background:var(--l)}.dots button.on::after{background:var(--a)}
 details{border-bottom:1px solid var(--l);padding:20px 0}summary{cursor:pointer;font-weight:600;font-size:19px;list-style:none;display:flex;justify-content:space-between;gap:12px}summary::-webkit-details-marker{display:none}summary::after{content:"+";color:var(--a);font:400 24px var(--mo);transition:transform .25s}details[open] summary::after{transform:rotate(45deg)}details p{margin-top:12px}
-/* form */
 form{display:grid;gap:16px;margin-top:34px;max-width:620px}
 input:not([type=range]),textarea{width:100%;background:var(--p);border:1px solid var(--l);color:var(--t);padding:14px;border-radius:3px;font:400 16px var(--s)}input:focus,textarea:focus{border-color:var(--a);outline:none}
 .fl.in{margin:0}#ok{display:none;border:1px solid var(--a);padding:16px;border-radius:3px}
@@ -194,48 +161,41 @@ footer .w{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
 <canvas id="bg" aria-hidden="true"></canvas><div id="bar"></div><div id="glow"></div>
 <header class="n"><div class="w">
   <a class="logo" href="#top"><i></i>Redline</a>
-  <nav class="links"><a href="#services">Services</a><a href="#work">Work</a><a href="#process">Process</a><a href="#roi">ROI</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></nav>
+  <nav class="links"><a href="#services">Services</a><a href="#work">Case studies</a><a href="#process">Process</a><a href="#roi">ROI</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></nav>
   <a class="btn links" href="#contact">Start a project</a><button id="mb" aria-expanded="false" aria-controls="mp">Menu</button>
 </div></header>
-<nav id="mp"><a href="#services">Services</a><a href="#work">Work</a><a href="#process">Process</a><a href="#roi">ROI</a><a href="#pricing">Pricing</a><a href="#contact">Start a project</a></nav>
+<nav id="mp"><a href="#services">Services</a><a href="#work">Case studies</a><a href="#process">Process</a><a href="#roi">ROI</a><a href="#pricing">Pricing</a><a href="#contact">Start a project</a></nav>
 
 <main id="top">
 <div class="hero"><canvas id="cv" aria-hidden="true"></canvas><div class="w">
-  <div class="tag mo">Full-service growth agency · Accepting Q1 2027 clients</div>
-  <h1><span><b>We turn attention</b></span><span><b>into revenue,</b></span><span><b class="ac">at light speed.</b></span></h1>
+  <div class="tag mo">Digital marketing agency · Accepting founding clients</div>
+  <h1><span><b>Digital marketing</b></span><span><b>you can</b></span><span><b class="ac">measure.</b></span></h1>
   <div class="rot">› now optimising: <b id="rw"></b><i></i></div>
-  <p>Strategy, brand, paid media, SEO and 3D web experiences from one senior team. Every campaign is measured against pipeline, not impressions.</p>
-  <div class="cta"><a class="btn" href="#contact">Book a strategy call</a><a class="btn g" href="#roi">Estimate your ROI</a></div>
-  <div class="hud"><span>Avg. ROAS <b>4.8×</b></span><span>Clients <b>120+</b></span><span>Ad spend managed <b>$86M</b></span><span class="live">Spend today <b id="lv"></b></span></div>
+  <p>Redline Studio plans, runs and reports on your digital marketing: ads, SEO, social, content, email, video and web. Every decision is tied to leads or sales, and you own every account.</p>
+  <div class="cta"><a class="btn" href="#contact">Book a free ad audit</a><a class="btn g" href="#process">See the 30-day plan</a></div>
+  <div class="hud"><span>Services <b>Full digital marketing</b></span><span>Reporting <b>Weekly</b></span><span>Accounts <b>You own them</b></span></div>
 </div></div>
-<div class="mq" aria-hidden="true"><div><span>HALDEN AUDIO</span><span>NOVA BANK</span><span>ORBITAL</span><span>KITE HEALTH</span><span>FERRO</span><span>LUMEN OS</span><span>HALDEN AUDIO</span><span>NOVA BANK</span><span>ORBITAL</span><span>KITE HEALTH</span><span>FERRO</span><span>LUMEN OS</span></div><div><span>+212% CONVERSION</span><span>–41% CPA</span><span>5.9× ROAS</span><span>+387% ORGANIC</span><span>+64% AOV</span><span>$4M SEED</span><span>+212% CONVERSION</span><span>–41% CPA</span><span>5.9× ROAS</span><span>+387% ORGANIC</span><span>+64% AOV</span><span>$4M SEED</span></div></div>
 
 <section id="services"><div class="w">
-  <div class="tag mo">What we do</div><h2>One team for the whole funnel.</h2>
-  <p class="lead">Pick a discipline to see what’s included.</p>
+  <div class="tag mo">What we do</div><h2>Every digital marketing service, one team.</h2>
+  <p class="lead">Pick a service to see what’s included.</p>
   <div class="tabs" role="tablist" id="tb"></div>
   <div class="panel" id="pn" role="tabpanel"></div>
 </div></section>
 
 <section id="work"><div class="w">
-  <div class="tag mo">Selected work</div><h2>Results you can audit.</h2>
-  <div class="fl" id="ff"><button class="chip on" data-f="all">All</button><button class="chip" data-f="3D">3D web</button><button class="chip" data-f="Paid">Paid media</button><button class="chip" data-f="Brand">Brand</button><button class="chip" data-f="SEO">SEO</button></div>
-  <div class="gr" id="gr"></div>
-  <div class="st" id="st">
-    <div><b data-n="86" data-p="$" data-s="M">0</b><span>ad spend managed</span></div>
-    <div><b data-n="4.8" data-s="×" data-d="1">0</b><span>average ROAS</span></div>
-    <div><b data-n="312" data-s="%">0</b><span>median organic growth</span></div>
-    <div><b data-n="96" data-s="%">0</b><span>client retention</span></div>
-  </div>
+  <div class="tag mo">Case studies</div><h2>Be one of our first results.</h2>
+  <p class="lead">We’re onboarding founding clients now. Every result we publish here will be real, shared with the client’s permission.</p>
+  <div class="cta" style="margin-top:28px"><a class="btn" href="#contact">Become a founding client</a></div>
 </div></section>
 
 <section id="process"><div class="w">
-  <div class="tag mo">How we work</div><h2>From audit to scale in 90 days.</h2>
+  <div class="tag mo">How we work</div><h2>Your first 30 days, step by step.</h2>
   <div class="tl" id="tl"><div id="fill"></div>
-    <article><span class="k">Week 1</span><h3>Audit and goals</h3><p>We review your data, rivals and funnel, then agree on one revenue target.</p></article>
-    <article><span class="k">Weeks 2–3</span><h3>Strategy and creative</h3><p>Positioning, messaging and a first batch of ads and pages, ready to test.</p></article>
-    <article><span class="k">Weeks 4–8</span><h3>Launch and test</h3><p>Weekly experiments on audiences, offers and landing pages, reported in a live dashboard.</p></article>
-    <article><span class="k">Weeks 9–12</span><h3>Scale what wins</h3><p>Budget moves to the proven channels, and we hand you a clear plan for the next quarter.</p></article>
+    <article><span class="k">Week 1</span><h3>Audit and goals</h3><p>We review your accounts, website and tracking, then agree on one clear goal.</p></article>
+    <article><span class="k">Week 2</span><h3>Creative and setup</h3><p>We build 3 to 5 ad concepts, fix tracking gaps and launch the first campaigns.</p></article>
+    <article><span class="k">Week 3</span><h3>Test and learn</h3><p>We test audiences, offers and creative, and send you a report every week.</p></article>
+    <article><span class="k">Week 4</span><h3>Review and plan</h3><p>We review what worked and agree the next 30 days together.</p></article>
   </div>
 </div></section>
 
@@ -243,16 +203,16 @@ footer .w{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
   <div class="tag mo">ROI estimator</div><h2>See what better could be worth.</h2>
   <div class="roi">
     <div>
-      <label for="r1">Monthly ad spend <output id="o1"></output></label><input id="r1" type="range" min="2000" max="200000" step="1000" value="25000">
-      <label for="r2">Cost per lead <output id="o2"></output></label><input id="r2" type="range" min="10" max="400" step="5" value="80">
+      <label for="r1">Monthly ad spend <output id="o1"></output></label><input id="r1" type="range" min="50000" max="5000000" step="25000" value="500000">
+      <label for="r2">Cost per lead <output id="o2"></output></label><input id="r2" type="range" min="100" max="5000" step="50" value="1500">
       <label for="r3">Lead-to-customer rate <output id="o3"></output></label><input id="r3" type="range" min="1" max="40" value="10">
-      <label for="r4">Average customer value <output id="o4"></output></label><input id="r4" type="range" min="100" max="20000" step="100" value="2500">
+      <label for="r4">Average customer value <output id="o4"></output></label><input id="r4" type="range" min="5000" max="500000" step="5000" value="50000">
     </div>
     <div class="out" aria-live="polite">
       <div><b id="x1"></b><span>extra customers per month (est.)</span></div>
       <div><b id="x2"></b><span>extra monthly revenue (est.)</span></div>
       <div><b id="x3"></b><span>projected ROAS</span></div>
-      <p class="mo" style="font-size:12px">Assumes a 32% lower cost per lead, our median across 2026 clients. Your results will vary.</p>
+      <p class="mo" style="font-size:12px">An illustrative assumption of a 32% lower cost per lead. It is not a guarantee, and your results will vary.</p>
     </div>
   </div>
 </div></section>
@@ -261,27 +221,23 @@ footer .w{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
   <div class="tag mo">Pricing</div><h2>Clear packages. No lock-in.</h2>
   <div class="sw" role="group" aria-label="Billing"><button class="on" data-m="r" aria-pressed="true">Monthly retainer</button><button data-m="p" aria-pressed="false">One-off project</button></div>
   <div class="pr" id="pr"></div>
-</div></section>
-
-<section><div class="w">
-  <div class="tag mo">Clients</div><h2>Straight from the dashboard.</h2>
-  <div class="qt" id="qb"><q id="qq"></q><span id="qa"></span></div><div class="dots" id="qd"></div>
+  <p class="mo" style="font-size:12px;margin-top:18px">Ad spend is paid directly to the platforms and is not included in these prices. No lock-in: cancel with 14 days’ notice.</p>
 </div></section>
 
 <section id="faq"><div class="w">
   <div class="tag mo">FAQ</div><h2>Before you ask.</h2><div style="margin-top:30px">
-  <details><summary>How soon will I see results?</summary><p>Paid media usually shows signal in 2–4 weeks. SEO and brand work compound over 3–6 months. We set milestones for each in the first call.</p></details>
-  <details><summary>Do you work with small budgets?</summary><p>Yes. Our Launch package starts at $2,900 a month, and we’ll tell you honestly if a smaller budget is better spent elsewhere first.</p></details>
-  <details><summary>Who owns the accounts and assets?</summary><p>You do. Ad accounts, analytics, creative files and website code all stay in your name from day one.</p></details>
-  <details><summary>What is a 3D website, and do I need one?</summary><p>It’s a page where visitors can rotate and explore your product live in the browser. It suits physical products, hardware and anything hard to explain with photos.</p></details></div>
+  <details><summary>How soon will I see results?</summary><p>Paid ads usually show early signal in 2–4 weeks, while SEO and content take 3–6 months. We agree milestones with you on the first call, and we never guarantee specific results.</p></details>
+  <details><summary>Do you work with small budgets?</summary><p>Yes. For paid ads we suggest at least PKR 2,000 a day in ad spend to get useful data. If your budget is lower, we’ll tell you honestly what to do first.</p></details>
+  <details><summary>Who owns the accounts and assets?</summary><p>You do. Ad accounts, analytics and creative files all stay in your name from day one.</p></details>
+  <details><summary>Who pays for the ads?</summary><p>You do, directly to Meta and Google from your own account. We never handle your ad budget.</p></details></div>
 </div></section>
 
 <section id="contact"><div class="w">
   <div class="tag mo">Let’s talk</div><h2>Tell us the goal.<br><span class="ac">We’ll bring the plan.</span></h2>
-  <p class="lead">Reply within one working day, with a free 20-minute audit.</p>
+  <p class="lead">Reply within one working day, with a free ad audit.</p>
   <form id="f" novalidate>
-    <div><label>I need help with</label><div class="fl in" data-g="svc"><button type="button" class="chip" aria-pressed="false">Paid media</button><button type="button" class="chip" aria-pressed="false">SEO</button><button type="button" class="chip" aria-pressed="false">Brand</button><button type="button" class="chip" aria-pressed="false">3D web</button><button type="button" class="chip" aria-pressed="false">Social</button></div></div>
-    <div><label>Monthly budget</label><div class="fl in" data-g="bud"><button type="button" class="chip" aria-pressed="false">Under $5k</button><button type="button" class="chip" aria-pressed="false">$5–20k</button><button type="button" class="chip" aria-pressed="false">$20k+</button></div></div>
+    <div><label>I need help with</label><div class="fl in" data-g="svc"><button type="button" class="chip" aria-pressed="false">Paid ads</button><button type="button" class="chip" aria-pressed="false">SEO</button><button type="button" class="chip" aria-pressed="false">Social media</button><button type="button" class="chip" aria-pressed="false">Content and video</button><button type="button" class="chip" aria-pressed="false">Web design</button><button type="button" class="chip" aria-pressed="false">Not sure</button></div></div>
+    <div><label>Monthly marketing budget</label><div class="fl in" data-g="bud"><button type="button" class="chip" aria-pressed="false">Under PKR 50k</button><button type="button" class="chip" aria-pressed="false">PKR 50k–200k</button><button type="button" class="chip" aria-pressed="false">PKR 200k+</button></div></div>
     <div><label for="fn">Name</label><input id="fn" required autocomplete="name"></div>
     <div><label for="fe">Work email</label><input id="fe" type="email" required autocomplete="email"></div>
     <div><label for="fm">Your goal</label><textarea id="fm" rows="3"></textarea></div>
@@ -302,52 +258,48 @@ $('#mb').onclick=function(){var o=$('#mp').classList.toggle('o');this.setAttribu
 $$('#mp a').forEach(function(a){a.onclick=function(){$('#mp').classList.remove('o');$('#mb').setAttribute('aria-expanded',false)}});
 addEventListener('keydown',function(e){if(e.key==='Escape'){$('#mp').classList.remove('o');$('#mb').setAttribute('aria-expanded',false)}});
 // services
-var SV=[['Paid media','Search, social and video campaigns built around cost per acquisition. We test creative weekly and move budget to what converts.',['Meta, Google, TikTok, LinkedIn','Creative testing every week','Live ROAS dashboard','Server-side tracking setup']],
-['SEO','Technical fixes, content and links that grow qualified organic traffic month after month.',['Technical audit and fixes','Topic and keyword roadmap','Content production','Link building']],
-['Brand','Positioning, naming, identity and messaging that makes you easy to remember and hard to compare.',['Brand strategy','Visual identity system','Tone of voice guide','Launch assets']],
-['3D web','Interactive 3D product pages and scroll stories that run live in the browser, with no video files.',['Product configurators','Scroll-driven camera moves','Phone-optimised builds','Under 2 s load target']],
-['Social + content','Short video, creators and community that keep your audience coming back.',['Short-form video','Creator partnerships','Community management','Monthly content calendar']]];
+var SV=[['Social media marketing','Content calendars, posting and community management on Instagram, Facebook, TikTok and LinkedIn.',['Monthly content calendar','Post design and scheduling','Community management','Monthly performance report']],
+['Paid ads','Meta, Google, TikTok and YouTube campaigns built around cost per lead or sale, with weekly creative testing.',['Campaign setup and launch','3 to 5 ad concepts to test','Weekly creative testing','Budget optimisation']],
+['SEO','Technical fixes, content and links that grow organic traffic over time, including local search.',['Website SEO audit','Keyword research','On-page and technical fixes','Google Business Profile and local SEO']],
+['Content and copywriting','Words that explain what you sell and move people to act.',['Website and landing page copy','Blog posts and articles','Ad copy and video scripts','Monthly content plan']],
+['Email and WhatsApp','Campaigns and automation that bring customers back.',['List setup and cleaning','Email campaigns and flows','WhatsApp broadcast plans','Open and click reporting']],
+['Video and influencers','Short-form video and creator partnerships that grow reach.',['Reels and TikTok video','Video editing','Influencer outreach','Campaign tracking']],
+['Branding and design','A clear look and message that makes you easy to remember.',['Logo and brand guide','Social and ad creatives','Packaging and print design','Brand voice guide']],
+['Web design','Fast, mobile-friendly websites and landing pages built to convert.',['Business and store websites','Landing pages','Speed and mobile optimisation','Shopify and WordPress']],
+['Analytics and tracking','Clean data, so every decision is based on real leads and sales.',['Meta Pixel and Conversions API check','Google Analytics 4 setup','Conversion event tests','Clear weekly reporting']],
+['Reputation management','Reviews and replies that build trust before people contact you.',['Review requests and replies','Google Business Profile care','Brand mention monitoring','Monthly reputation report']]];
 var tb=$('#tb'),pn=$('#pn');SV.forEach(function(s,i){var b=document.createElement('button');b.textContent=s[0];b.setAttribute('role','tab');b.onclick=function(){sel(i)};tb.appendChild(b)});
 function sel(i){$$('button',tb).forEach(function(b,j){b.setAttribute('aria-selected',i===j)});var s=SV[i];pn.innerHTML='<span class="sc"></span><div><h3 style="font-size:30px;margin-bottom:12px">'+s[0]+'</h3><p>'+s[1]+'</p></div><ul>'+s[2].map(function(x){return'<li>'+x+'</li>'}).join('')+'</ul>'}sel(0);
-// work
-var CS=[['Halden Audio','3D','3D product launch','Headphone site with a rotatable 3D model and live sound demo.','+212% conversion'],['Nova Bank','Paid','Paid media','Cut cost per account opening across search and social.','–41% CPA'],['Orbital','Brand','Brand identity','New name, identity and launch site for a space-data startup.','$4M seed closed'],['Kite Health','SEO','SEO programme','Rebuilt site structure and content for 900 clinic pages.','+387% organic'],['Ferro','3D','Interactive configurator','Build-your-own bicycle in 3D, with live pricing.','+64% AOV'],['Lumen OS','Paid','Paid media','B2B pipeline from LinkedIn and Google at a stable CAC.','5.9× ROAS']];
-var gr=$('#gr');gr.innerHTML=CS.map(function(c,i){return'<article class="cs" data-f="'+c[1]+'"><div class="art" style="--x:'+(20+i*13)+'%" data-k="'+c[2]+'"><i></i></div><div class="b"><h3>'+c[0]+'</h3><p style="font-size:15px">'+c[3]+'</p><div class="r">'+c[4]+'</div></div></article>'}).join('');
-$$('#ff .chip').forEach(function(b){b.onclick=function(){$$('#ff .chip').forEach(function(x){x.classList.remove('on')});b.classList.add('on');$$('.cs').forEach(function(c){c.classList.toggle('h',b.dataset.f!=='all'&&c.dataset.f!==b.dataset.f)})}});
-// counters
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;io.unobserve(e.target);$$('b',e.target).forEach(function(b){var n=+b.dataset.n,d=+b.dataset.d||0,p=b.dataset.p||'',s=b.dataset.s||'',t0=performance.now();(function f(t){var k=RM?1:Math.min(1,(t-t0)/1400),v=n*(1-Math.pow(1-k,3));b.textContent=p+v.toFixed(d)+s;if(k<1)requestAnimationFrame(f)})(t0)})})},{threshold:.4});io.observe($('#st'));
 // scroll reveal
 var rv=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');rv.unobserve(e.target)}})},{threshold:.12});
-$$('.tag,h2,.lead,.tabs,.panel,.fl,.st>div,.tl article,.roi,.sw,.qt,details,form').forEach(function(el,i){el.classList.add('rv');el.style.transitionDelay=(el.matches('.st>div,.tl article')?(i%4)*80:0)+'ms';rv.observe(el)});
+$$('.tag,h2,.lead,.tabs,.panel,.tl article,.roi,.sw,details,form').forEach(function(el,i){el.classList.add('rv');el.style.transitionDelay=(el.matches('.tl article')?(i%4)*80:0)+'ms';rv.observe(el)});
 // timeline + scroll bar
 var tl=$('#tl'),ar=$$('article',tl);function tlu(){var r=tl.getBoundingClientRect(),h=innerHeight*.6,p=Math.max(0,Math.min(r.height,h-r.top));$('#fill').style.height=p+'px';ar.forEach(function(a){a.classList.toggle('on',a.offsetTop<p)})}
 addEventListener('scroll',function(){$('#bar').style.width=scrollY/Math.max(1,document.body.scrollHeight-innerHeight)*100+'%';tlu()},{passive:true});addEventListener('resize',tlu);tlu();
 // pointer effects
 addEventListener('pointermove',function(e){mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5;$('#glow').style.left=e.clientX+'px';$('#glow').style.top=e.clientY+'px';
-if(e.pointerType!=='mouse'||RM)return;var c=e.target.closest&&e.target.closest('.cs,.pl,.btn');if(!c)return;var r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;
+if(e.pointerType!=='mouse'||RM)return;var c=e.target.closest&&e.target.closest('.pl,.btn');if(!c)return;var r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;
 c.style.transform=c.classList.contains('btn')?'translate('+px*10+'px,'+py*8+'px)':'perspective(700px) rotateY('+px*9+'deg) rotateX('+-py*9+'deg) translateY(-4px)'});
-document.addEventListener('pointerout',function(e){var c=e.target.closest&&e.target.closest('.cs,.pl,.btn');if(c)c.style.transform=''});
+document.addEventListener('pointerout',function(e){var c=e.target.closest&&e.target.closest('.pl,.btn');if(c)c.style.transform=''});
 // roi
-var fm=function(n){return'$'+Math.round(n).toLocaleString('en-US')};
+var fm=function(n){return'PKR '+Math.round(n).toLocaleString('en-US')};
 function roi(){var a=+$('#r1').value,c=+$('#r2').value,r=+$('#r3').value/100,v=+$('#r4').value;$('#o1').textContent=fm(a);$('#o2').textContent=fm(c);$('#o3').textContent=Math.round(r*100)+'%';$('#o4').textContent=fm(v);
 var l0=a/c,l1=a/(c*.68),cu=(l1-l0)*r;$('#x1').textContent='+'+Math.round(cu);$('#x2').textContent=fm(cu*v);$('#x3').textContent=(l1*r*v/a).toFixed(1)+'×'}
 $$('.roi input').forEach(function(i){i.oninput=roi});roi();
 // pricing
-var PR={r:[['Launch','$2,900','/mo',['1 paid channel','Monthly reporting','Landing page tests','Email support']],['Growth','$7,500','/mo',['3 channels + SEO','Weekly creative tests','Live dashboard','Dedicated strategist'],1],['Scale','$15k+','/mo',['Full-funnel team','3D web experiences','Quarterly workshops','Priority Slack channel']]],
-p:[['Brand sprint','$12k','',['Strategy and identity','Messaging guide','Launch assets','4 weeks']],['Website','$24k','',['Strategy and design','Build and CMS','SEO foundation','8 weeks'],1],['3D experience','$45k+','',['Custom 3D build','Scroll storytelling','Phone-optimised','10–12 weeks']]]};
+var PR={r:[['Founding Pilot','PKR 25,000','/month',['Audit of your accounts and website','Tracking check','First campaigns live','Weekly report'],1],['Growth','PKR 60,000+','/mo',['Up to 3 services of your choice','Weekly report','Monthly strategy call','Priority replies']],['Scale','PKR 150,000+','/mo',['Full digital marketing team','Advanced reporting','Priority support','Quarterly planning']]],p:[]};
 function pr(m){$('#pr').innerHTML=PR[m].map(function(p){return'<div class="pl'+(p[4]?' f':'')+'"><h3>'+p[0]+'</h3><div class="v">'+p[1]+'<small>'+p[2]+'</small></div><ul>'+p[3].map(function(x){return'<li>'+x+'</li>'}).join('')+'</ul><a class="btn'+(p[4]?'':' g')+'" href="#contact">Choose '+p[0]+'</a></div>'}).join('')}pr('r');
 $$('.sw button').forEach(function(b){b.onclick=function(){$$('.sw button').forEach(function(x){x.classList.remove('on');x.setAttribute('aria-pressed',false)});b.classList.add('on');b.setAttribute('aria-pressed',true);pr(b.dataset.m)}});
-// testimonials
-var QS=[['Redline rebuilt our funnel and cut acquisition cost by 41% in a quarter.','Priya Nair, CMO, Nova Bank'],['The 3D product page is the best-converting page we’ve ever had.','Maya Ortiz, founder, Halden Audio'],['They report to us on pipeline, not vanity metrics. That changed our board meetings.','Tom Weiss, VP Growth, Lumen OS']],qi=0;
-function q(i){qi=i;var b=$('#qb');b.classList.remove('sw2');void b.offsetWidth;b.classList.add('sw2');$('#qq').textContent=QS[i][0];$('#qa').textContent=QS[i][1]+' (sample)';$$('#qd button').forEach(function(x,j){x.classList.toggle('on',j===i)})}
-QS.forEach(function(_,i){var b=document.createElement('button');b.setAttribute('aria-label','Quote '+(i+1));b.onclick=function(){q(i)};$('#qd').appendChild(b)});q(0);
-if(!RM)setInterval(function(){if(!document.hidden)q((qi+1)%QS.length)},6500);
-// form
+// form: paste your Formspree URL below (https://formspree.io/f/xxxx) so briefs reach your inbox
+var FORM_URL='';
 $$('.fl.in').forEach(function(g){$$('.chip',g).forEach(function(c){c.onclick=function(){if(g.dataset.g==='bud')$$('.chip',g).forEach(function(x){x.classList.remove('on');x.setAttribute('aria-pressed',false)});var on=c.classList.toggle('on');c.setAttribute('aria-pressed',on)}})});
-$('#f').onsubmit=function(e){e.preventDefault();var n=$('#fn').value.trim(),m=$('#fe').value.trim();if(!n||!/^\S+@\S+\.\S+$/.test(m)){$('#er').textContent='Please add your name and a valid work email.';return}$('#er').textContent='';this.querySelector('button[type=submit]').style.display='none';$('#ok').style.display='block'};
-// typed line + live spend
-var W=['paid media','3D experiences','organic search','brand systems','social reach'],wi=0,ci=0,dl=0;
+$('#f').onsubmit=function(e){e.preventDefault();var n=$('#fn').value.trim(),m=$('#fe').value.trim();if(!n||!/^\S+@\S+\.\S+$/.test(m)){$('#er').textContent='Please add your name and a valid work email.';return}$('#er').textContent='';
+var pick=function(g){return $$('.chip.on',$('[data-g='+g+']')).map(function(x){return x.textContent}).join(', ')},d={name:n,email:m,help_with:pick('svc'),budget:pick('bud'),goal:$('#fm').value.trim()},bt=this.querySelector('button[type=submit]');
+if(!FORM_URL){location.href='mailto:hello@redline.studio?subject='+encodeURIComponent('New brief from '+n)+'&body='+encodeURIComponent('Name: '+n+'\nEmail: '+m+'\nNeeds: '+d.help_with+'\nBudget: '+d.budget+'\nGoal: '+d.goal);return}
+bt.disabled=true;fetch(FORM_URL,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(d)}).then(function(r){if(!r.ok)throw 0;bt.style.display='none';$('#ok').style.display='block'}).catch(function(){bt.disabled=false;$('#er').textContent='Could not send. Please email hello@redline.studio.'})};
+// typed line
+var W=['Meta and Google ads','SEO','social media','content and video','email and WhatsApp'],wi=0,ci=0,dl=0;
 (function ty(){var w=W[wi],t=dl?35:70;ci+=dl?-1:1;$('#rw').textContent=w.slice(0,ci);if(!dl&&ci===w.length){dl=1;t=1400}else if(dl&&ci===0){dl=0;wi=(wi+1)%W.length;t=300}setTimeout(ty,RM?3000:t)})();
-var sp=214380;function lv(){sp+=Math.round(20+Math.random()*180);$('#lv').textContent=fm(sp)}lv();if(!RM)setInterval(lv,1100);
 // background particle network
 (function(){if(RM)return;var c=$('#bg'),x=c.getContext('2d'),d=Math.min(devicePixelRatio||1,1.5),w,h,N=innerWidth<700?36:70,P=[];
 function sz(){w=innerWidth;h=innerHeight;c.width=w*d;c.height=h*d}sz();addEventListener('resize',sz);
@@ -402,7 +354,7 @@ services:S0.map(function(s){return{id:uid(),name:s[0],desc:s[1],features:s[2].sl
 products:P0.r.map(function(p){return mp(p,'r')}).concat(P0.p.map(function(p){return mp(p,'p')})),log:[]}}
 var D=ld(K,null),defpw=!ld(HK,null);
 var C={services:{t:'Services',n:'service',f:[{k:'name',l:'Name',r:1},{k:'desc',l:'Description',t:'area'},{k:'features',l:'Features (one per line)',t:'lines'},{k:'visible',l:'Visible on website',t:'check'}],sub:function(s){return s.desc}},
-products:{t:'Products & pricing',n:'plan',f:[{k:'name',l:'Name',r:1},{k:'price',l:'Price (e.g. $2,900)',r:1},{k:'period',l:'Period (e.g. /mo)'},{k:'cat',l:'Type',t:'sel',o:[['r','Monthly retainer'],['p','One-off project']]},{k:'features',l:'Features (one per line)',t:'lines'},{k:'featured',l:'Highlight as featured',t:'check'},{k:'visible',l:'Visible on website',t:'check'}],sub:function(p){return p.price+(p.period||'')+' · '+(p.cat==='r'?'Retainer':'Project')}}};
+products:{t:'Products & pricing',n:'plan',f:[{k:'name',l:'Name',r:1},{k:'price',l:'Price (e.g. PKR 60,000)',r:1},{k:'period',l:'Period (e.g. /mo)'},{k:'cat',l:'Type',t:'sel',o:[['r','Monthly retainer'],['p','One-off project']]},{k:'features',l:'Features (one per line)',t:'lines'},{k:'featured',l:'Highlight as featured',t:'check'},{k:'visible',l:'Visible on website',t:'check'}],sub:function(p){return p.price+(p.period||'')+' · '+(p.cat==='r'?'Retainer':'Project')}}};
 function lg(m){D.log=[{t:Date.now(),m:m}].concat(D.log||[]).slice(0,30)}
 // ---- apply data to the public site
 function opened(){var h=location.hash.slice(1);return h==='admin'||h.indexOf('admin-')===0}
@@ -414,7 +366,7 @@ if(SV.length)sel(0);else pn.innerHTML='<p>Services coming soon.</p>';
 ['r','p'].forEach(function(m){PR[m]=D.products.filter(function(p){return p.visible&&p.cat===m}).map(function(p){return[esc(p.name),esc(p.price),esc(p.period),(p.features||[]).map(esc),p.featured?1:0]})});
 pr($('.sw .on').dataset.m);
 r.setProperty('--a',S.accent);r.setProperty('--a2','color-mix(in srgb,'+S.accent+' 60%,white)');
-document.title=S.name+' – Growth agency for the next web';$('.logo').lastChild.nodeValue=S.name;
+document.title=S.name+' – Digital marketing agency';$('.logo').lastChild.nodeValue=S.name;
 var f=$$('footer .w span');f[0].textContent='© 2026 '+S.name;f[1].textContent=S.email;
 var b=$('#bn');if(b)b.remove();if(S.bannerOn&&S.banner){b=document.createElement('div');b.id='bn';b.textContent=S.banner;b.style.cssText='position:relative;z-index:55;background:var(--a);color:#05060a;text-align:center;padding:8px 16px;font:600 14px var(--s)';document.body.insertBefore(b,document.body.firstChild)}
 maint()}
