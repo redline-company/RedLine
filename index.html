@@ -131,6 +131,63 @@ input:not([type=range]),textarea{width:100%;background:var(--p);border:1px solid
 footer{border-top:1px solid var(--l);padding:40px 0 56px;position:relative;z-index:1;color:var(--m);font:400 13px var(--mo)}
 footer .w{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}.js .rv{opacity:1;transform:none}}
+/* ===== ADMIN PANEL STYLES ===== */
+#adm{position:fixed;inset:0;z-index:1000;background:#05060a;overflow:auto;font:400 15px/1.5 var(--s);color:var(--t);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+#adm[hidden]{display:none}
+#adm *,#adm *::before,#adm *::after{box-sizing:border-box}
+#adm [hidden]{display:none!important}
+#adm h1,#adm h2,#adm h3{margin:0}
+#adm h1{font-size:26px;line-height:1.1}
+#adm h2{font-size:22px;margin-bottom:14px}
+#adm h2::after{display:none}
+#adm h3{font-size:17px;margin-bottom:12px}
+#adm p{max-width:none}
+#adm .bt{display:inline-block;background:var(--a);color:#05060a;border:0;border-radius:4px;padding:10px 16px;font:700 15px var(--s);cursor:pointer;text-decoration:none}
+#adm .bt.g{background:#141722;color:var(--t);border:1px solid var(--l)}
+#adm .bt.d{background:none;color:#ff7a86;border:1px solid #4a1f26}
+#adm .bt.s{padding:6px 10px;font-size:13px}
+#adm input:not([type=checkbox]):not([type=color]):not([type=file]),#adm select,#adm textarea{width:100%;background:#05060a;border:1px solid var(--l);color:var(--t);border-radius:4px;padding:10px 12px;margin-top:6px;font:400 16px var(--s)}
+#adm input:focus,#adm select:focus,#adm textarea:focus{border-color:var(--a);outline:0}
+#adm input[type=color]{display:block;margin-top:6px;width:60px;height:38px;background:none;border:1px solid var(--l);border-radius:4px;padding:2px}
+#adm label{display:block;font:500 12px var(--mo);color:var(--m);margin-bottom:14px}
+#adm label.ck{display:flex;gap:10px;align-items:center;color:var(--t);font:400 14px var(--s)}
+#adm label.ck input{width:18px;height:18px;margin:0}
+#adm form{display:block;margin:0;max-width:none}
+#adm .card{background:var(--p);border:1px solid var(--l);border-radius:8px;padding:20px}
+#adm .card+.card,#adm form.card{margin-top:14px}
+#adm #lg{min-height:100%;display:grid;place-items:center;padding:20px}
+#adm #lg .card{width:100%;max-width:380px;margin:0}
+#adm #le{color:#ff7a86;font-size:13px;min-height:20px;margin:0 0 10px}
+#adm .brand{font-weight:700;font-size:19px;display:flex;gap:8px;align-items:center;margin-bottom:18px;white-space:nowrap}
+#adm .brand i{width:12px;height:12px;background:var(--a);transform:rotate(45deg);box-shadow:0 0 14px var(--a)}
+#adm #app{display:grid;min-height:100%;align-content:start}
+#adm aside{display:flex;gap:6px;align-items:center;padding:10px 14px;overflow-x:auto;position:sticky;top:0;z-index:5;background:var(--p);border-bottom:1px solid var(--l)}
+#adm aside .brand{margin:0 10px 0 0}
+#adm aside nav{display:flex;gap:4px}
+#adm aside a{white-space:nowrap;padding:9px 12px;border-radius:6px;color:var(--m);text-decoration:none}
+#adm aside a.on{background:#141722;color:var(--t)}
+#adm #lo{margin-left:auto;flex:none}
+#adm #vw{padding:20px;max-width:920px;width:100%}
+@media(min-width:800px){#adm #app{grid-template-columns:230px 1fr}#adm aside{flex-direction:column;align-items:stretch;height:100vh;border-bottom:0;border-right:1px solid var(--l);padding:22px 14px}#adm aside nav{flex-direction:column}#adm aside .brand{margin:0 0 18px}#adm #lo{margin:auto 0 0}#adm .sg{grid-template-columns:repeat(4,1fr)}#adm .g2{grid-template-columns:1fr 1fr}}
+#adm .hd{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap}
+#adm .sg{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+#adm .sg .card b{display:block;font-size:30px;letter-spacing:-.04em;line-height:1.1}
+#adm .sg .card span,#adm .mt,#adm small{color:var(--m);font-size:13px}
+#adm .g2{display:grid;gap:14px;margin-top:14px}
+#adm .al{border:1px solid #5a2a1f;background:#1c0f0d;color:#ffb199;padding:12px 14px;border-radius:6px;margin-bottom:14px}
+#adm .al.ok{border-color:#1d5a3a;background:#0c1c14;color:#9dffc4}
+#adm .rw{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--l);flex-wrap:wrap}
+#adm .rw:last-child{border:0}
+#adm .rw .i{flex:1;min-width:190px}
+#adm .rw small{display:block}
+#adm .bd{font:500 11px var(--mo);padding:6px 12px;border-radius:99px;border:1px solid var(--l);cursor:pointer;background:none;color:var(--m)}
+#adm .bd.on{color:#3dff8a;border-color:#1d5a3a}
+#adm .ax{display:flex;gap:6px;flex-wrap:wrap}
+#adm .lgi{padding:8px 0;border-bottom:1px solid var(--l);font-size:14px}
+#adm .lgi small{display:block}
+#adm #md{position:fixed;inset:0;background:rgba(0,0,0,.72);display:grid;place-items:center;padding:16px;z-index:20}
+#adm #mc{width:100%;max-width:480px;max-height:90vh;overflow:auto;margin:0}
+#adm #ts{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#141722;border:1px solid var(--a);padding:10px 16px;border-radius:6px;z-index:30;font-size:14px}
 </style>
 </head>
 <body>
@@ -313,6 +370,114 @@ function rs(){var w=cv.clientWidth||600;R.setSize(w,w,false)}rs();addEventListen
 var vis=true;new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(cv);
 (function f(t){if(!RM)requestAnimationFrame(f);if(!vis||document.hidden)return;var sy=scrollY/Math.max(1,document.body.scrollHeight-innerHeight);
 g.rotation.y=t*.0002+mx*1.2+sy*4;g.rotation.x=.4+my*.6+sy;wf.rotation.z=t*.0001;pt.rotation.y=-t*.00006+sy;L3.position.set(mx*9,-my*9,4);k.scale.setScalar(1+Math.sin(t*.0012)*.02);R.render(sc,cm)})(0)}catch(e){}})();
+</script>
+
+<!-- ===== ADMIN PANEL (open with #admin) ===== -->
+<div id="adm" hidden>
+<div id="lg"><form class="card" id="lf"><div class="brand"><i></i>Redline Admin</div>
+<label>Password<input type="password" id="pw" autocomplete="current-password" required></label>
+<p id="le" role="alert"></p><button class="bt" style="width:100%">Sign in</button></form></div>
+<div id="app" hidden>
+<aside><div class="brand"><i></i>Admin</div>
+<nav><a href="#admin-dashboard" data-r="dashboard">Dashboard</a><a href="#admin-services" data-r="services">Services</a><a href="#admin-products" data-r="products">Products</a><a href="#admin-settings" data-r="settings">Settings</a></nav>
+<button class="bt g s" id="lo">Log out</button></aside>
+<main id="vw"></main></div>
+<div id="md" hidden><div class="card" id="mc"></div></div>
+<div id="ts" hidden></div>
+</div>
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)},$$=function(s){return[].slice.call(document.querySelectorAll(s))};
+var K='rl_data',HK='rl_admin_hash',SK='rl_admin_sess',DEFPW='redline123',fails=0;
+var S0=SV.map(function(s){return s.slice()}),P0={r:PR.r.slice(),p:PR.p.slice()};
+var uid=function(){return Math.random().toString(36).slice(2,9)};
+var esc=function(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})};
+function ld(k,d){try{var v=JSON.parse(localStorage.getItem(k));return v==null?d:v}catch(e){return d}}
+function sv(k,v){try{localStorage.setItem(k,JSON.stringify(v));return 1}catch(e){toast('Storage unavailable in this browser');return 0}}
+function toast(m){var t=$('#ts');t.textContent=m;t.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(function(){t.hidden=true},2600)}
+async function H(s){s='rl::'+s;if(window.crypto&&crypto.subtle){var b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return[].map.call(new Uint8Array(b),function(x){return x.toString(16).padStart(2,'0')}).join('')}var h=5381;for(var i=0;i<s.length;i++)h=(h*33^s.charCodeAt(i))>>>0;return'f'+h}
+function mkDef(){var mp=function(p,c){return{id:uid(),name:p[0],price:p[1],period:p[2],cat:c,features:p[3].slice(),featured:!!p[4],visible:true}};
+return{settings:{name:'Redline Studio',email:'hello@redline.studio',accent:'#ff2a3d',banner:'',bannerOn:false,maint:false},
+services:S0.map(function(s){return{id:uid(),name:s[0],desc:s[1],features:s[2].slice(),visible:true}}),
+products:P0.r.map(function(p){return mp(p,'r')}).concat(P0.p.map(function(p){return mp(p,'p')})),log:[]}}
+var D=ld(K,null),defpw=!ld(HK,null);
+var C={services:{t:'Services',n:'service',f:[{k:'name',l:'Name',r:1},{k:'desc',l:'Description',t:'area'},{k:'features',l:'Features (one per line)',t:'lines'},{k:'visible',l:'Visible on website',t:'check'}],sub:function(s){return s.desc}},
+products:{t:'Products & pricing',n:'plan',f:[{k:'name',l:'Name',r:1},{k:'price',l:'Price (e.g. $2,900)',r:1},{k:'period',l:'Period (e.g. /mo)'},{k:'cat',l:'Type',t:'sel',o:[['r','Monthly retainer'],['p','One-off project']]},{k:'features',l:'Features (one per line)',t:'lines'},{k:'featured',l:'Highlight as featured',t:'check'},{k:'visible',l:'Visible on website',t:'check'}],sub:function(p){return p.price+(p.period||'')+' · '+(p.cat==='r'?'Retainer':'Project')}}};
+function lg(m){D.log=[{t:Date.now(),m:m}].concat(D.log||[]).slice(0,30)}
+// ---- apply data to the public site
+function opened(){var h=location.hash.slice(1);return h==='admin'||h.indexOf('admin-')===0}
+function maint(){var m=$('#mt');if(m)m.remove();if(D&&D.settings.maint&&!opened()){m=document.createElement('div');m.id='mt';m.style.cssText='position:fixed;inset:0;z-index:999;background:#05060a;display:grid;place-items:center;text-align:center;padding:24px;font:700 clamp(28px,7vw,56px)/1.1 var(--s)';m.innerHTML='<div>'+esc(D.settings.name)+'<br><span style="font:400 16px var(--mo);color:#8f95ab">Back soon.</span></div>';document.body.appendChild(m)}}
+function ap(){if(!D)return;var S=D.settings,r=document.documentElement.style;
+SV.length=0;D.services.filter(function(s){return s.visible}).forEach(function(s){SV.push([esc(s.name),esc(s.desc),(s.features||[]).map(esc)])});
+tb.innerHTML='';SV.forEach(function(s,i){var b=document.createElement('button');b.innerHTML=s[0];b.setAttribute('role','tab');b.onclick=function(){sel(i)};tb.appendChild(b)});
+if(SV.length)sel(0);else pn.innerHTML='<p>Services coming soon.</p>';
+['r','p'].forEach(function(m){PR[m]=D.products.filter(function(p){return p.visible&&p.cat===m}).map(function(p){return[esc(p.name),esc(p.price),esc(p.period),(p.features||[]).map(esc),p.featured?1:0]})});
+pr($('.sw .on').dataset.m);
+r.setProperty('--a',S.accent);r.setProperty('--a2','color-mix(in srgb,'+S.accent+' 60%,white)');
+document.title=S.name+' – Growth agency for the next web';$('.logo').lastChild.nodeValue=S.name;
+var f=$$('footer .w span');f[0].textContent='© 2026 '+S.name;f[1].textContent=S.email;
+var b=$('#bn');if(b)b.remove();if(S.bannerOn&&S.banner){b=document.createElement('div');b.id='bn';b.textContent=S.banner;b.style.cssText='position:relative;z-index:55;background:var(--a);color:#05060a;text-align:center;padding:8px 16px;font:600 14px var(--s)';document.body.insertBefore(b,document.body.firstChild)}
+maint()}
+// ---- data actions
+function save(m){lg(m);if(sv(K,D)){toast(m)}ap();view(cur())}
+function dl(n,o){var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(o,null,2)],{type:'application/json'}));a.download=n;a.click();setTimeout(function(){URL.revokeObjectURL(a.href)},1000)}
+function cl(k,a){return a.slice(0,100).map(function(x){var o={id:String(x.id||uid())};C[k].f.forEach(function(f){var v=x[f.k];o[f.k]=f.t==='check'?!!v:f.t==='lines'?(Array.isArray(v)?v.map(function(s){return String(s).slice(0,200)}):[]):String(v==null?'':v).slice(0,500)});if(k==='products')o.cat=o.cat==='p'?'p':'r';return o})}
+// ---- auth
+function authed(){try{var e=+sessionStorage.getItem(SK);if(e>Date.now()){sessionStorage.setItem(SK,Date.now()+18e5);return 1}}catch(x){}return 0}
+function out(){try{sessionStorage.removeItem(SK)}catch(x){}location.hash='top'}
+$('#lf').onsubmit=async function(e){e.preventDefault();var lk=+ld('rl_lock',0);if(Date.now()<lk){$('#le').textContent='Too many attempts. Try again in '+Math.ceil((lk-Date.now())/1000)+'s.';return}
+var ok=(await H($('#pw').value))===(ld(HK,null)||await H(DEFPW));
+if(ok){fails=0;sv('rl_lock',0);try{sessionStorage.setItem(SK,Date.now()+18e5)}catch(x){}$('#le').textContent='';$('#pw').value='';route()}else{fails++;if(fails>=5){sv('rl_lock',Date.now()+6e4);fails=0}$('#le').textContent='Incorrect password.'}};
+$('#lo').onclick=out;
+// ---- views
+function fld(f,v){var x=v[f.k];if(f.t==='check')return'<label class="ck"><input type="checkbox" name="'+f.k+'" '+(x?'checked':'')+'> '+f.l+'</label>';
+var i=f.t==='area'?'<textarea name="'+f.k+'" rows="3">'+esc(x)+'</textarea>':f.t==='lines'?'<textarea name="'+f.k+'" rows="4">'+esc((x||[]).join('\n'))+'</textarea>':f.t==='sel'?'<select name="'+f.k+'">'+f.o.map(function(o){return'<option value="'+o[0]+'"'+(x===o[0]?' selected':'')+'>'+o[1]+'</option>'}).join('')+'</select>':'<input name="'+f.k+'" value="'+esc(x)+'" maxlength="200" '+(f.r?'required':'')+'>';
+return'<label>'+f.l+i+'</label>'}
+function dash(){var lv=function(a){return a.filter(function(i){return i.visible}).length},s=D.settings;
+return'<div class="hd"><h1>Dashboard</h1><a class="bt g" href="#top">View site ↗</a></div>'+
+(defpw?'<div class="al">You are using the default password. Change it in Settings → Security.</div>':'')+
+'<div class="al ok">Changes apply to the site instantly in this browser.</div>'+
+'<div class="sg"><div class="card"><b>'+lv(D.services)+'/'+D.services.length+'</b><span>services live</span></div><div class="card"><b>'+lv(D.products)+'/'+D.products.length+'</b><span>plans live</span></div><div class="card"><b>'+D.products.filter(function(p){return p.featured}).length+'</b><span>featured plans</span></div><div class="card"><b style="color:'+(s.maint?'#ff7a86':'#3dff8a')+'">'+(s.maint?'Paused':'Live')+'</b><span>site status</span></div></div>'+
+'<div class="g2"><div class="card"><h3>Quick actions</h3><div class="ax"><a class="bt g s" href="#admin-services">Manage services</a><a class="bt g s" href="#admin-products">Manage products</a><a class="bt g s" href="#admin-settings">Settings</a></div></div>'+
+'<div class="card"><h3>Recent activity</h3>'+((D.log||[]).slice(0,8).map(function(l){return'<div class="lgi">'+esc(l.m)+'<small>'+new Date(l.t).toLocaleString()+'</small></div>'}).join('')||'<p class="mt">No changes yet.</p>')+'</div></div>'}
+function crud(k){var c=C[k],a=D[k];return'<div class="hd"><h1>'+c.t+'</h1><button class="bt" data-a="add" data-k="'+k+'">+ Add '+c.n+'</button></div><div class="card">'+(a.length?a.map(function(x){var d=' data-k="'+k+'" data-i="'+x.id+'"';return'<div class="rw"><div class="i"><b>'+esc(x.name)+'</b>'+(x.featured?' ★':'')+'<small>'+esc(c.sub(x))+'</small></div><button class="bd'+(x.visible?' on':'')+'" data-a="vis"'+d+'>'+(x.visible?'Live':'Hidden')+'</button><div class="ax"><button class="bt g s" data-a="up"'+d+' aria-label="Move up">↑</button><button class="bt g s" data-a="dn"'+d+' aria-label="Move down">↓</button><button class="bt g s" data-a="edit"'+d+'>Edit</button><button class="bt d s" data-a="del"'+d+'>Delete</button></div></div>'}).join(''):'<p class="mt">Nothing here yet.</p>')+'</div>'}
+function sett(){var s=D.settings;return'<div class="hd"><h1>Settings</h1></div><form class="card" id="sf"><h3>Website</h3><label>Site name<input name="name" value="'+esc(s.name)+'" maxlength="60"></label><label>Contact email<input name="email" type="email" value="'+esc(s.email)+'"></label><label>Accent colour<input name="accent" type="color" value="'+esc(s.accent)+'"></label><label class="ck"><input type="checkbox" name="bannerOn" '+(s.bannerOn?'checked':'')+'> Show announcement bar</label><label>Announcement text<input name="banner" value="'+esc(s.banner)+'" maxlength="140"></label><label class="ck"><input type="checkbox" name="maint" '+(s.maint?'checked':'')+'> Maintenance mode (visitors see a “back soon” screen)</label><button class="bt">Save settings</button></form>'+
+'<form class="card" id="pf"><h3>Security</h3><label>Current password<input type="password" name="c" autocomplete="current-password" required></label><label>New password (min 8 characters)<input type="password" name="n" autocomplete="new-password" required></label><label>Confirm new password<input type="password" name="n2" autocomplete="new-password" required></label><button class="bt">Change password</button></form>'+
+'<div class="card"><h3>Data</h3><p class="mt" style="margin:0 0 12px">Backup downloads everything. Import restores a backup file.</p><div class="ax"><button class="bt g" data-a="bak">Backup</button><label class="bt g" style="margin:0;cursor:pointer;color:var(--t);font:700 15px var(--s)">Import<input type="file" id="im" accept=".json" hidden></label><button class="bt d" data-a="rst">Reset all</button></div></div>'}
+var R={dashboard:dash,services:function(){return crud('services')},products:function(){return crud('products')},settings:sett};
+function cur(){var r=location.hash.slice(7);return R[r]?r:'dashboard'}
+function view(r){if(!D)D=mkDef();$$('#adm aside nav a').forEach(function(a){a.classList.toggle('on',a.dataset.r===r)});$('#vw').innerHTML=R[r]()}
+function route(){var o=opened();$('#adm').hidden=!o;document.body.style.overflow=o?'hidden':'';
+if(o){var a=authed();$('#lg').hidden=!!a;$('#app').hidden=!a;if(a)view(cur());else setTimeout(function(){$('#pw').focus()},50)}maint()}
+addEventListener('hashchange',route);
+setInterval(function(){if(opened()&&!$('#app').hidden&&!authed())route()},15000);
+// ---- modal form
+function closeM(){$('#md').hidden=true}
+function form(k,it){var c=C[k],v=it||{visible:true,cat:'r',period:'/mo',features:[]};$('#md').hidden=false;
+$('#mc').innerHTML='<h2>'+(it?'Edit ':'Add ')+c.n+'</h2><form id="mf">'+c.f.map(function(f){return fld(f,v)}).join('')+'<div class="ax"><button class="bt" type="submit">Save</button><button class="bt g" type="button" data-x>Cancel</button></div></form>';
+$('#mf').onsubmit=function(e){e.preventDefault();var fd=new FormData(e.target),o=it||{id:uid()};
+c.f.forEach(function(f){o[f.k]=f.t==='check'?fd.has(f.k):f.t==='lines'?String(fd.get(f.k)).split('\n').map(function(s){return s.trim().slice(0,200)}).filter(Boolean).slice(0,12):String(fd.get(f.k)||'').trim().slice(0,500)});
+if(!o.name)return;if(!it)D[k].push(o);closeM();save((it?'Updated ':'Added ')+o.name)}}
+$('#md').onclick=function(e){if(e.target.id==='md'||e.target.hasAttribute('data-x'))closeM()};
+addEventListener('keydown',function(e){if(e.key==='Escape')closeM()});
+// ---- actions
+$('#vw').onclick=function(e){var b=e.target.closest('[data-a]');if(!b)return;var a=b.dataset.a,k=b.dataset.k,L=D[k],ix=L?L.findIndex(function(x){return x.id===b.dataset.i}):-1,x=L&&L[ix];
+if(a==='add')form(k);else if(a==='edit')form(k,x);
+else if(a==='vis'){x.visible=!x.visible;save(x.name+(x.visible?' is now live':' is now hidden'))}
+else if((a==='up'&&ix>0)||(a==='dn'&&ix<L.length-1)){var j=a==='up'?ix-1:ix+1,t=L[ix];L[ix]=L[j];L[j]=t;save('Reordered '+k)}
+else if(a==='del'){if(confirm('Delete "'+x.name+'"?'))save('Deleted '+L.splice(ix,1)[0].name)}
+else if(a==='bak')dl('redline-backup.json',D);
+else if(a==='rst'){if(confirm('Reset services, products and settings to defaults?')){D=mkDef();save('Reset to defaults')}}};
+$('#vw').onsubmit=async function(e){e.preventDefault();var f=e.target,fd=new FormData(f);
+if(f.id==='sf'){var ac=String(fd.get('accent'));D.settings={name:String(fd.get('name')).trim()||'Redline Studio',email:String(fd.get('email')).trim(),accent:/^#[0-9a-f]{6}$/i.test(ac)?ac:'#ff2a3d',banner:String(fd.get('banner')).trim(),bannerOn:fd.has('bannerOn'),maint:fd.has('maint')};save('Settings updated')}
+else if(f.id==='pf'){var n=String(fd.get('n'));if(n.length<8||n!==fd.get('n2'))return toast('New passwords must match and be 8+ characters');if((await H(String(fd.get('c'))))!==(ld(HK,null)||await H(DEFPW)))return toast('Current password is wrong');sv(HK,await H(n));defpw=false;lg('Password changed');sv(K,D);f.reset();toast('Password changed')}};
+document.addEventListener('change',function(e){if(e.target.id!=='im')return;var f=e.target.files[0];if(!f)return;
+f.text().then(function(t){try{var j=JSON.parse(t);if(!Array.isArray(j.services)||!Array.isArray(j.products))throw 0;D.services=cl('services',j.services);D.products=cl('products',j.products);
+if(j.settings)Object.keys(D.settings).forEach(function(k){if(k in j.settings)D.settings[k]=typeof D.settings[k]==='boolean'?!!j.settings[k]:String(j.settings[k]).slice(0,140)});
+if(!/^#[0-9a-f]{6}$/i.test(D.settings.accent))D.settings.accent='#ff2a3d';save('Imported backup')}catch(x){toast('That file is not a valid backup')}})});
+if(D)ap();else D=null;
+route();
+})();
 </script>
 </body>
 </html>
