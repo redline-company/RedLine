@@ -61,7 +61,6 @@ section::before{content:"";position:absolute;width:520px;height:520px;border-rad
 section:nth-of-type(even){--ox:62%}
 @keyframes dr{to{transform:translate(70px,140px) scale(1.25)}}
 .lead{margin-top:16px;font-size:18px}
-/* FIX: tabs wrap onto extra rows so every service is visible and clickable */
 .tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:34px;padding-bottom:6px}
 .tabs button,.chip{flex:none;background:var(--p);color:var(--m);border:1px solid var(--l);padding:11px 16px;border-radius:99px;font:500 14px var(--s);cursor:pointer;transition:.2s}
 .tabs button[aria-selected=true],.chip.on{color:#05060a;background:var(--a);border-color:var(--a)}
@@ -99,6 +98,7 @@ input:not([type=range]),textarea{width:100%;background:var(--p);border:1px solid
 footer{border-top:1px solid var(--l);padding:40px 0 56px;position:relative;z-index:1;color:var(--m);font:400 13px var(--mo)}
 footer .w{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}.js .rv{opacity:1;transform:none}}
+
 /* ===== ADMIN PANEL STYLES ===== */
 #adm{position:fixed;inset:0;z-index:1000;background:#05060a;overflow:auto;font:400 15px/1.5 var(--s);color:var(--t);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 #adm[hidden]{display:none}
@@ -150,7 +150,7 @@ footer .w{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
 #adm .rw small{display:block}
 #adm .bd{font:500 11px var(--mo);padding:6px 12px;border-radius:99px;border:1px solid var(--l);cursor:pointer;background:none;color:var(--m)}
 #adm .bd.on{color:#3dff8a;border-color:#1d5a3a}
-#adm .ax{display:flex;gap:6px;flex-wrap:wrap}
+#adm .ax{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
 #adm .lgi{padding:8px 0;border-bottom:1px solid var(--l);font-size:14px}
 #adm .lgi small{display:block}
 #adm #md{position:fixed;inset:0;background:rgba(0,0,0,.72);display:grid;place-items:center;padding:16px;z-index:20}
@@ -291,7 +291,7 @@ $$('.roi input').forEach(function(i){i.oninput=roi});roi();
 var PR={r:[['Founding Pilot','PKR 25,000','/month',['Audit of your accounts and website','Tracking check','First campaigns live','Weekly report'],1],['Growth','PKR 60,000+','/mo',['Up to 3 services of your choice','Weekly report','Monthly strategy call','Priority replies']],['Scale','PKR 150,000+','/mo',['Full digital marketing team','Advanced reporting','Priority support','Quarterly planning']]],p:[]};
 function pr(m){$('#pr').innerHTML=PR[m].map(function(p){return'<div class="pl'+(p[4]?' f':'')+'"><h3>'+p[0]+'</h3><div class="v">'+p[1]+'<small>'+p[2]+'</small></div><ul>'+p[3].map(function(x){return'<li>'+x+'</li>'}).join('')+'</ul><a class="btn'+(p[4]?'':' g')+'" href="#contact">Choose '+p[0]+'</a></div>'}).join('')}pr('r');
 $$('.sw button').forEach(function(b){b.onclick=function(){$$('.sw button').forEach(function(x){x.classList.remove('on');x.setAttribute('aria-pressed',false)});b.classList.add('on');b.setAttribute('aria-pressed',true);pr(b.dataset.m)}});
-// form: paste your Formspree URL below (https://formspree.io/f/xxxx) so briefs reach your inbox
+// form
 var FORM_URL='';
 $$('.fl.in').forEach(function(g){$$('.chip',g).forEach(function(c){c.onclick=function(){if(g.dataset.g==='bud')$$('.chip',g).forEach(function(x){x.classList.remove('on');x.setAttribute('aria-pressed',false)});var on=c.classList.toggle('on');c.setAttribute('aria-pressed',on)}})});
 $('#f').onsubmit=function(e){e.preventDefault();var n=$('#fn').value.trim(),m=$('#fe').value.trim();if(!n||!/^\S+@\S+\.\S+$/.test(m)){$('#er').textContent='Please add your name and a valid work email.';return}$('#er').textContent='';
@@ -310,7 +310,7 @@ for(var i=0;i<N;i++){var p=P[i];p[0]+=p[2];p[1]+=p[3];if(p[0]<0||p[0]>w)p[2]*=-1
 x.fillStyle='rgba(255,122,134,.8)';x.beginPath();x.arc(p[0],p[1],1.4,0,7);x.fill();
 for(var j=i+1;j<N;j++){var q=P[j],dx=p[0]-q[0],dy=p[1]-q[1],D=dx*dx+dy*dy;if(D<14000){x.strokeStyle='rgba(255,42,61,'+(1-D/14000)*.35+')';x.beginPath();x.moveTo(p[0],p[1]);x.lineTo(q[0],q[1]);x.stroke()}}
 var ax=p[0]-px,ay=p[1]-py,AD=ax*ax+ay*ay;if(AD<24000){x.strokeStyle='rgba(255,255,255,'+(1-AD/24000)*.4+')';x.beginPath();x.moveTo(p[0],p[1]);x.lineTo(px,py);x.stroke()}}})()})();
-// hero 3D: metallic torus knot (WebGL), wireframe shell, particle sphere, moving lights
+// hero 3D: WebGL torus knot
 (function(){if(!window.THREE)return;try{var T=THREE,cv=$('#cv'),R=new T.WebGLRenderer({canvas:cv,alpha:true,antialias:true}),i;
 R.setPixelRatio(Math.min(devicePixelRatio||1,2));var sc=new T.Scene(),cm=new T.PerspectiveCamera(38,1,.1,50),g=new T.Group();cm.position.z=7.5;sc.add(g);
 var k=new T.Mesh(new T.TorusKnotGeometry(1.4,.4,320,56,2,3),new T.MeshPhysicalMaterial({color:0x1a1c26,metalness:.95,roughness:.16,clearcoat:1,clearcoatRoughness:.08}));
@@ -357,8 +357,8 @@ var D=ld(K,null),defpw=!ld(HK,null);
 var C={services:{t:'Services',n:'service',f:[{k:'name',l:'Name',r:1},{k:'desc',l:'Description',t:'area'},{k:'features',l:'Features (one per line)',t:'lines'},{k:'visible',l:'Visible on website',t:'check'}],sub:function(s){return s.desc}},
 products:{t:'Products & pricing',n:'plan',f:[{k:'name',l:'Name',r:1},{k:'price',l:'Price (e.g. PKR 60,000)',r:1},{k:'period',l:'Period (e.g. /mo)'},{k:'cat',l:'Type',t:'sel',o:[['r','Monthly retainer'],['p','One-off project']]},{k:'features',l:'Features (one per line)',t:'lines'},{k:'featured',l:'Highlight as featured',t:'check'},{k:'visible',l:'Visible on website',t:'check'}],sub:function(p){return p.price+(p.period||'')+' · '+(p.cat==='r'?'Retainer':'Project')}}};
 function lg(m){D.log=[{t:Date.now(),m:m}].concat(D.log||[]).slice(0,30)}
-// ---- apply data to the public site
-function opened(){var h=location.hash.slice(1);return h==='admin'||h.indexOf('admin-')===0}
+function getHashRoute(){var h=location.hash||'';var idx=h.indexOf('#');if(idx!==-1)h=h.slice(idx+1);return h}
+function opened(){var h=getHashRoute();return h==='admin'||h.indexOf('admin-')===0}
 function maint(){var m=$('#mt');if(m)m.remove();if(D&&D.settings.maint&&!opened()){m=document.createElement('div');m.id='mt';m.style.cssText='position:fixed;inset:0;z-index:999;background:#05060a;display:grid;place-items:center;text-align:center;padding:24px;font:700 clamp(28px,7vw,56px)/1.1 var(--s)';m.innerHTML='<div>'+esc(D.settings.name)+'<br><span style="font:400 16px var(--mo);color:#8f95ab">Back soon.</span></div>';document.body.appendChild(m)}}
 function ap(){if(!D)return;var S=D.settings,r=document.documentElement.style;
 SV.length=0;D.services.filter(function(s){return s.visible}).forEach(function(s){SV.push([esc(s.name),esc(s.desc),(s.features||[]).map(esc)])});
@@ -371,18 +371,15 @@ document.title=S.name+' – Digital marketing agency';$('.logo').lastChild.nodeV
 var f=$$('footer .w span');f[0].textContent='© 2026 '+S.name;f[1].textContent=S.email;
 var b=$('#bn');if(b)b.remove();if(S.bannerOn&&S.banner){b=document.createElement('div');b.id='bn';b.textContent=S.banner;b.style.cssText='position:relative;z-index:55;background:var(--a);color:#05060a;text-align:center;padding:8px 16px;font:600 14px var(--s)';document.body.insertBefore(b,document.body.firstChild)}
 maint()}
-// ---- data actions
 function save(m){lg(m);if(sv(K,D)){toast(m)}ap();view(cur())}
 function dl(n,o){var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(o,null,2)],{type:'application/json'}));a.download=n;a.click();setTimeout(function(){URL.revokeObjectURL(a.href)},1000)}
 function cl(k,a){return a.slice(0,100).map(function(x){var o={id:String(x.id||uid())};C[k].f.forEach(function(f){var v=x[f.k];o[f.k]=f.t==='check'?!!v:f.t==='lines'?(Array.isArray(v)?v.map(function(s){return String(s).slice(0,200)}):[]):String(v==null?'':v).slice(0,500)});if(k==='products')o.cat=o.cat==='p'?'p':'r';return o})}
-// ---- auth
 function authed(){try{var e=+sessionStorage.getItem(SK);if(e>Date.now()){sessionStorage.setItem(SK,Date.now()+18e5);return 1}}catch(x){}return 0}
 function out(){try{sessionStorage.removeItem(SK)}catch(x){}location.hash='top'}
 $('#lf').onsubmit=async function(e){e.preventDefault();var lk=+ld('rl_lock',0);if(Date.now()<lk){$('#le').textContent='Too many attempts. Try again in '+Math.ceil((lk-Date.now())/1000)+'s.';return}
 var ok=(await H($('#pw').value))===(ld(HK,null)||await H(DEFPW));
 if(ok){fails=0;sv('rl_lock',0);try{sessionStorage.setItem(SK,Date.now()+18e5)}catch(x){}$('#le').textContent='';$('#pw').value='';route()}else{fails++;if(fails>=5){sv('rl_lock',Date.now()+6e4);fails=0}$('#le').textContent='Incorrect password.'}};
 $('#lo').onclick=out;
-// ---- views
 function fld(f,v){var x=v[f.k];if(f.t==='check')return'<label class="ck"><input type="checkbox" name="'+f.k+'" '+(x?'checked':'')+'> '+f.l+'</label>';
 var i=f.t==='area'?'<textarea name="'+f.k+'" rows="3">'+esc(x)+'</textarea>':f.t==='lines'?'<textarea name="'+f.k+'" rows="4">'+esc((x||[]).join('\n'))+'</textarea>':f.t==='sel'?'<select name="'+f.k+'">'+f.o.map(function(o){return'<option value="'+o[0]+'"'+(x===o[0]?' selected':'')+'>'+o[1]+'</option>'}).join('')+'</select>':'<input name="'+f.k+'" value="'+esc(x)+'" maxlength="200" '+(f.r?'required':'')+'>';
 return'<label>'+f.l+i+'</label>'}
@@ -398,13 +395,12 @@ function sett(){var s=D.settings;return'<div class="hd"><h1>Settings</h1></div><
 '<form class="card" id="pf"><h3>Security</h3><label>Current password<input type="password" name="c" autocomplete="current-password" required></label><label>New password (min 8 characters)<input type="password" name="n" autocomplete="new-password" required></label><label>Confirm new password<input type="password" name="n2" autocomplete="new-password" required></label><button class="bt">Change password</button></form>'+
 '<div class="card"><h3>Data</h3><p class="mt" style="margin:0 0 12px">Backup downloads everything. Import restores a backup file.</p><div class="ax"><button class="bt g" data-a="bak">Backup</button><label class="bt g" style="margin:0;cursor:pointer;color:var(--t);font:700 15px var(--s)">Import<input type="file" id="im" accept=".json" hidden></label><button class="bt d" data-a="rst">Reset all</button></div></div>'}
 var R={dashboard:dash,services:function(){return crud('services')},products:function(){return crud('products')},settings:sett};
-function cur(){var r=location.hash.slice(7);return R[r]?r:'dashboard'}
+function cur(){var r=getHashRoute().slice(6);return R[r]?r:'dashboard'}
 function view(r){if(!D)D=mkDef();$$('#adm aside nav a').forEach(function(a){a.classList.toggle('on',a.dataset.r===r)});$('#vw').innerHTML=R[r]()}
 function route(){var o=opened();$('#adm').hidden=!o;document.body.style.overflow=o?'hidden':'';
 if(o){var a=authed();$('#lg').hidden=!!a;$('#app').hidden=!a;if(a)view(cur());else setTimeout(function(){$('#pw').focus()},50)}maint()}
 addEventListener('hashchange',route);
 setInterval(function(){if(opened()&&!$('#app').hidden&&!authed())route()},15000);
-// ---- modal form
 function closeM(){$('#md').hidden=true}
 function form(k,it){var c=C[k],v=it||{visible:true,cat:'r',period:'/mo',features:[]};$('#md').hidden=false;
 $('#mc').innerHTML='<h2>'+(it?'Edit ':'Add ')+c.n+'</h2><form id="mf">'+c.f.map(function(f){return fld(f,v)}).join('')+'<div class="ax"><button class="bt" type="submit">Save</button><button class="bt g" type="button" data-x>Cancel</button></div></form>';
@@ -413,7 +409,6 @@ c.f.forEach(function(f){o[f.k]=f.t==='check'?fd.has(f.k):f.t==='lines'?String(fd
 if(!o.name)return;if(!it)D[k].push(o);closeM();save((it?'Updated ':'Added ')+o.name)}}
 $('#md').onclick=function(e){if(e.target.id==='md'||e.target.hasAttribute('data-x'))closeM()};
 addEventListener('keydown',function(e){if(e.key==='Escape')closeM()});
-// ---- actions
 $('#vw').onclick=function(e){var b=e.target.closest('[data-a]');if(!b)return;var a=b.dataset.a,k=b.dataset.k,L=D[k],ix=L?L.findIndex(function(x){return x.id===b.dataset.i}):-1,x=L&&L[ix];
 if(a==='add')form(k);else if(a==='edit')form(k,x);
 else if(a==='vis'){x.visible=!x.visible;save(x.name+(x.visible?' is now live':' is now hidden'))}
