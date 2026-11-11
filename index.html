@@ -61,7 +61,8 @@ section::before{content:"";position:absolute;width:520px;height:520px;border-rad
 section:nth-of-type(even){--ox:62%}
 @keyframes dr{to{transform:translate(70px,140px) scale(1.25)}}
 .lead{margin-top:16px;font-size:18px}
-.tabs{display:flex;gap:8px;overflow-x:auto;margin-top:34px;padding-bottom:6px;scrollbar-width:none}
+/* FIX: tabs wrap onto extra rows so every service is visible and clickable */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:34px;padding-bottom:6px}
 .tabs button,.chip{flex:none;background:var(--p);color:var(--m);border:1px solid var(--l);padding:11px 16px;border-radius:99px;font:500 14px var(--s);cursor:pointer;transition:.2s}
 .tabs button[aria-selected=true],.chip.on{color:#05060a;background:var(--a);border-color:var(--a)}
 .panel{margin-top:18px;border:1px solid var(--l);background:var(--p);padding:26px;display:grid;gap:22px;position:relative;overflow:hidden}
