@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" data-a="red">
 <head>
@@ -236,19 +237,23 @@ footer .w{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
 <section id="contact"><div class="w">
   <div class="tag mo">Let’s talk</div><h2>Tell us the goal.<br><span class="ac">We’ll bring the plan.</span></h2>
   <p class="lead">Reply within one working day, with a free ad audit.</p>
+  <!-- NOTE: Replace YOUR_FORMSPREE_ID below with your actual Formspree endpoint ID (e.g. https://formspree.io/f/xyz123) -->
   <form id="f" novalidate>
     <div><label>I need help with</label><div class="fl in" data-g="svc"><button type="button" class="chip" aria-pressed="false">Paid ads</button><button type="button" class="chip" aria-pressed="false">SEO</button><button type="button" class="chip" aria-pressed="false">Social media</button><button type="button" class="chip" aria-pressed="false">Content and video</button><button type="button" class="chip" aria-pressed="false">Web design</button><button type="button" class="chip" aria-pressed="false">Not sure</button></div></div>
     <div><label>Monthly marketing budget</label><div class="fl in" data-g="bud"><button type="button" class="chip" aria-pressed="false">Under PKR 50k</button><button type="button" class="chip" aria-pressed="false">PKR 50k–200k</button><button type="button" class="chip" aria-pressed="false">PKR 200k+</button></div></div>
-    <div><label for="fn">Name</label><input id="fn" required autocomplete="name"></div>
-    <div><label for="fe">Work email</label><input id="fe" type="email" required autocomplete="email"></div>
-    <div><label for="fm">Your goal</label><textarea id="fm" rows="3"></textarea></div>
+    <div><label for="fn">Name</label><input id="fn" name="name" required autocomplete="name"></div>
+    <div><label for="fe">Work email</label><input id="fe" name="email" type="email" required autocomplete="email"></div>
+    <div><label for="fm">Your goal</label><textarea id="fm" name="goal" rows="3"></textarea></div>
+    <!-- Hidden fields for selected chips -->
+    <input type="hidden" id="help_with_input" name="help_with">
+    <input type="hidden" id="budget_input" name="budget">
     <p id="er" class="mo" style="color:var(--a2);font-size:13px" role="alert"></p>
     <button class="btn" type="submit">Send brief</button><div id="ok" role="status">Brief received. Expect a reply within one working day.</div>
   </form>
 </div></section>
 </main>
 <div class="big" aria-hidden="true">REDLINE</div>
-<footer><div class="w"><span>© 2026 Redline Studio</span><span>hello@redline.studio</span><span>Built live, in code.</span></div></footer>
+<footer><div class="w"><span>© 2026 Redline Studio</span><span>helloredlineco@gmail.com</span><span>Built live, in code.</span></div></footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
@@ -291,13 +296,20 @@ $$('.roi input').forEach(function(i){i.oninput=roi});roi();
 var PR={r:[['Founding Pilot','PKR 25,000','/month',['Audit of your accounts and website','Tracking check','First campaigns live','Weekly report'],1],['Growth','PKR 60,000+','/mo',['Up to 3 services of your choice','Weekly report','Monthly strategy call','Priority replies']],['Scale','PKR 150,000+','/mo',['Full digital marketing team','Advanced reporting','Priority support','Quarterly planning']]],p:[]};
 function pr(m){$('#pr').innerHTML=PR[m].map(function(p){return'<div class="pl'+(p[4]?' f':'')+'"><h3>'+p[0]+'</h3><div class="v">'+p[1]+'<small>'+p[2]+'</small></div><ul>'+p[3].map(function(x){return'<li>'+x+'</li>'}).join('')+'</ul><a class="btn'+(p[4]?'':' g')+'" href="#contact">Choose '+p[0]+'</a></div>'}).join('')}pr('r');
 $$('.sw button').forEach(function(b){b.onclick=function(){$$('.sw button').forEach(function(x){x.classList.remove('on');x.setAttribute('aria-pressed',false)});b.classList.add('on');b.setAttribute('aria-pressed',true);pr(b.dataset.m)}});
-// form
-var FORM_URL='';
-$$('.fl.in').forEach(function(g){$$('.chip',g).forEach(function(c){c.onclick=function(){if(g.dataset.g==='bud')$$('.chip',g).forEach(function(x){x.classList.remove('on');x.setAttribute('aria-pressed',false)});var on=c.classList.toggle('on');c.setAttribute('aria-pressed',on)}})});
+// form - UPDATED WITH FORMSPREE BACKEND ENDPOINT
+var FORM_URL='https://formspree.io/f/YOUR_FORMSPREE_ID';
+$$('.fl.in').forEach(function(g){$$('.chip',g).forEach(function(c){c.onclick=function(){if(g.dataset.g==='bud')$$('.chip',g).forEach(function(x){x.classList.remove('on');x.setAttribute('aria-pressed',false)});var on=c.classList.toggle('on');c.setAttribute('aria-pressed',on);
+// update hidden inputs for form backend
+if(g.dataset.g==='svc'){$('#help_with_input').value=$$('.chip.on',$('[data-g=svc]')).map(function(x){return x.textContent}).join(', ')}
+if(g.dataset.g==='bud'){$('#budget_input').value=$$('.chip.on',$('[data-g=bud]')).map(function(x){return x.textContent}).join(', ')}
+}})});
 $('#f').onsubmit=function(e){e.preventDefault();var n=$('#fn').value.trim(),m=$('#fe').value.trim();if(!n||!/^\S+@\S+\.\S+$/.test(m)){$('#er').textContent='Please add your name and a valid work email.';return}$('#er').textContent='';
 var pick=function(g){return $$('.chip.on',$('[data-g='+g+']')).map(function(x){return x.textContent}).join(', ')},d={name:n,email:m,help_with:pick('svc'),budget:pick('bud'),goal:$('#fm').value.trim()},bt=this.querySelector('button[type=submit]');
-if(!FORM_URL){location.href='mailto:hello@redline.studio?subject='+encodeURIComponent('New brief from '+n)+'&body='+encodeURIComponent('Name: '+n+'\nEmail: '+m+'\nNeeds: '+d.help_with+'\nBudget: '+d.budget+'\nGoal: '+d.goal);return}
-bt.disabled=true;fetch(FORM_URL,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(d)}).then(function(r){if(!r.ok)throw 0;bt.style.display='none';$('#ok').style.display='block'}).catch(function(){bt.disabled=false;$('#er').textContent='Could not send. Please email hello@redline.studio.'})};
+
+// Sync hidden input values just in case
+$('#help_with_input').value=d.help_with;$('#budget_input').value=d.budget;
+if(!FORM_URL||FORM_URL.includes('YOUR_FORMSPREE_ID')){location.href='mailto:helloredlineco@gmail.com?subject='+encodeURIComponent('New brief from '+n)+'&body='+encodeURIComponent('Name: '+n+'\nEmail: '+m+'\nNeeds: '+d.help_with+'\nBudget: '+d.budget+'\nGoal: '+d.goal);return}
+bt.disabled=true;fetch(FORM_URL,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(d)}).then(function(r){if(!r.ok)throw 0;bt.style.display='none';$('#ok').style.display='block'}).catch(function(){bt.disabled=false;$('#er').textContent='Could not send. Please email helloredlineco@gmail.com.'})};
 // typed line
 var W=['Meta and Google ads','SEO','social media','content and video','email and WhatsApp'],wi=0,ci=0,dl=0;
 (function ty(){var w=W[wi],t=dl?35:70;ci+=dl?-1:1;$('#rw').textContent=w.slice(0,ci);if(!dl&&ci===w.length){dl=1;t=1400}else if(dl&&ci===0){dl=0;wi=(wi+1)%W.length;t=300}setTimeout(ty,RM?3000:t)})();
@@ -348,9 +360,9 @@ var esc=function(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){r
 function ld(k,d){try{var v=JSON.parse(localStorage.getItem(k));return v==null?d:v}catch(e){return d}}
 function sv(k,v){try{localStorage.setItem(k,JSON.stringify(v));return 1}catch(e){toast('Storage unavailable in this browser');return 0}}
 function toast(m){var t=$('#ts');t.textContent=m;t.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(function(){t.hidden=true},2600)}
-async function H(s){s='rl::'+s;if(window.crypto&&crypto.subtle){var b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return[].map.call(new Uint8Array(b),function(x){return x.toString(16).padStart(2,'0')}).join('')}var h=5381;for(var i=0;i<s.length;i++)h=(h*33^s.charCodeAt(i))>>>0;return'f'+h}
+async function H(s){s='rl::'+s;if(window.crypto&&crypto.subtle){var b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return[].map.call(new Uint8Array(b),function(x){return x.toString(16).padStart(2,'0')}.join('')}var h=5381;for(var i=0;i<s.length;i++)h=(h*33^s.charCodeAt(i))>>>0;return'f'+h}
 function mkDef(){var mp=function(p,c){return{id:uid(),name:p[0],price:p[1],period:p[2],cat:c,features:p[3].slice(),featured:!!p[4],visible:true}};
-return{settings:{name:'Redline Studio',email:'hello@redline.studio',accent:'#ff2a3d',banner:'',bannerOn:false,maint:false},
+return{settings:{name:'Redline Studio',email:'helloredlineco@gmail.com',accent:'#ff2a3d',banner:'',bannerOn:false,maint:false},
 services:S0.map(function(s){return{id:uid(),name:s[0],desc:s[1],features:s[2].slice(),visible:true}}),
 products:P0.r.map(function(p){return mp(p,'r')}).concat(P0.p.map(function(p){return mp(p,'p')})),log:[]}}
 var D=ld(K,null),defpw=!ld(HK,null);
@@ -389,7 +401,7 @@ return'<div class="hd"><h1>Dashboard</h1><a class="bt g" href="#top">View site �
 '<div class="al ok">Changes apply to the site instantly in this browser.</div>'+
 '<div class="sg"><div class="card"><b>'+lv(D.services)+'/'+D.services.length+'</b><span>services live</span></div><div class="card"><b>'+lv(D.products)+'/'+D.products.length+'</b><span>plans live</span></div><div class="card"><b>'+D.products.filter(function(p){return p.featured}).length+'</b><span>featured plans</span></div><div class="card"><b style="color:'+(s.maint?'#ff7a86':'#3dff8a')+'">'+(s.maint?'Paused':'Live')+'</b><span>site status</span></div></div>'+
 '<div class="g2"><div class="card"><h3>Quick actions</h3><div class="ax"><a class="bt g s" href="#admin-services">Manage services</a><a class="bt g s" href="#admin-products">Manage products</a><a class="bt g s" href="#admin-settings">Settings</a></div></div>'+
-'<div class="card"><h3>Recent activity</h3>'+((D.log||[]).slice(0,8).map(function(l){return'<div class="lgi">'+esc(l.m)+'<small>'+new Date(l.t).toLocaleString()+'</small></div>'}).join('')||'<p class="mt">No changes yet.</p>')+'</div></div>'}
+'<div class="card"><h3>Recent activity</h3>'+((D.log||[]).slice(0,8).map(function(l){return'<div class="lgi">'+esc(l.m)+' <small>'+new Date(l.t).toLocaleString()+'</small></div>'}).join('')||'<p class="mt">No changes yet.</p>')+'</div></div>'}
 function crud(k){var c=C[k],a=D[k];return'<div class="hd"><h1>'+c.t+'</h1><button class="bt" data-a="add" data-k="'+k+'">+ Add '+c.n+'</button></div><div class="card">'+(a.length?a.map(function(x){var d=' data-k="'+k+'" data-i="'+x.id+'"';return'<div class="rw"><div class="i"><b>'+esc(x.name)+'</b>'+(x.featured?' ★':'')+'<small>'+esc(c.sub(x))+'</small></div><button class="bd'+(x.visible?' on':'')+'" data-a="vis"'+d+'>'+(x.visible?'Live':'Hidden')+'</button><div class="ax"><button class="bt g s" data-a="up"'+d+' aria-label="Move up">↑</button><button class="bt g s" data-a="dn"'+d+' aria-label="Move down">↓</button><button class="bt g s" data-a="edit"'+d+'>Edit</button><button class="bt d s" data-a="del"'+d+'>Delete</button></div></div>'}).join(''):'<p class="mt">Nothing here yet.</p>')+'</div>'}
 function sett(){var s=D.settings;return'<div class="hd"><h1>Settings</h1></div><form class="card" id="sf"><h3>Website</h3><label>Site name<input name="name" value="'+esc(s.name)+'" maxlength="60"></label><label>Contact email<input name="email" type="email" value="'+esc(s.email)+'"></label><label>Accent colour<input name="accent" type="color" value="'+esc(s.accent)+'"></label><label class="ck"><input type="checkbox" name="bannerOn" '+(s.bannerOn?'checked':'')+'> Show announcement bar</label><label>Announcement text<input name="banner" value="'+esc(s.banner)+'" maxlength="140"></label><label class="ck"><input type="checkbox" name="maint" '+(s.maint?'checked':'')+'> Maintenance mode (visitors see a “back soon” screen)</label><button class="bt">Save settings</button></form>'+
 '<form class="card" id="pf"><h3>Security</h3><label>Current password<input type="password" name="c" autocomplete="current-password" required></label><label>New password (min 8 characters)<input type="password" name="n" autocomplete="new-password" required></label><label>Confirm new password<input type="password" name="n2" autocomplete="new-password" required></label><button class="bt">Change password</button></form>'+
